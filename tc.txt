@@ -14,7 +14,7 @@ tr gunzip {
     }
 }
 
-tr umerge {
+tr UMerge_dynamo {
 	site condorpool {
 		container "casa_image"
 		pfn "/opt/UMerge_dynamo/UMerge_dynamo"
