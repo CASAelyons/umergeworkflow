@@ -59,7 +59,7 @@ class CASAWorkflow(object):
 
         # generate image from max reflectivity
         colorscale = File("nexrad_ref.png")
-        max_reflectity_image = File(max_reflectivity.name[:-7]+".png")
+        max_reflectivity_image = File(max_reflectivity.name[:-7]+".png")
         post_ref_job = Job("merged_netcdf2png")
         post_ref_job.addArguments("-c", colorscale, "-q 235 -z 0,75", "-o", max_reflectivity_image, max_reflectivity)
         post_ref_job.uses(max_reflectivity, link=Link.INPUT)
