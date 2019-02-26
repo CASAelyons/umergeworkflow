@@ -1,0 +1,2 @@
+nexrad_ref.png                  file://${PWD}/input/nexrad_ref.png                    site="local"
+#.*                             file://${PWD}/input/[0]                             site="local"    regex="true"
