@@ -48,16 +48,16 @@ class CASAWorkflow(object):
         string_end = self.radar_files[-1].find(".", string_start)
         last_time = self.radar_files[-1][string_start+1:string_end]
 
-        #calculate max velocity (maybe split them to multiple ones)
+        #calculate max reflectivity (maybe split them to multiple ones)
         max_reflectivity = File("MaxReflectivity_"+last_time+".netcdf")
         ref_job = Job("UMerge_dynamo")
         ref_job.addArguments(" ".join(radar_inputs))
         for radar_input in radar_inputs:
             ref_job.uses(radar_input, link=Link.INPUT)
         ref_job.uses(max_reflectivity, link=Link.OUTPUT, transfer=True, register=False)
-        dax.addJob(vel_job)
+        dax.addJob(ref_job)
 
-        # generate image from max velocity
+        # generate image from max reflectivity
         colorscale = File("nexrad_ref.png")
         max_reflectity_image = File(max_reflectivity.name[:-7]+".png")
         post_ref_job = Job("merged_netcdf2png")
