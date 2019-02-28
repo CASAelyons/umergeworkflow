@@ -1,2 +1,3 @@
 nexrad_ref.png                  file://${PWD}/input/nexrad_ref.png                    site="local"
+umerge_config.txt		file://${PWD}/input/umerge_config.txt		      site="local"
 #.*                             file://${PWD}/input/[0]                             site="local"    regex="true"
