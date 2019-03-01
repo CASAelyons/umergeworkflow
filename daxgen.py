@@ -50,7 +50,7 @@ class CASAWorkflow(object):
 
         #calculate max reflectivity (maybe split them to multiple ones)
         umconfigfile = File("umerge_config.txt")
-        max_reflectivity = File("MaxReflectivity_"+last_time+".netcdf")
+        max_reflectivity = File("MergedReflectivity_"+last_time+".netcdf")
         ref_job = Job("UMerge_dynamo")
         ref_job.addArguments("-c", umconfigfile)
         ref_job.addArguments(" ".join(radar_inputs))
